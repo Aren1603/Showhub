@@ -28,8 +28,10 @@ class IndexController extends Controller
                     ->leftJoin('rates', 'films.id', '=', 'rates.film_id')
                     ->groupBy('films.id')
                     ->orderBy('average_rate', 'desc');
-            } else {
-                $films = Film::query();
+            } elseif($request->valueBy == 'sbn') {
+                $films = $films->join('years', 'films.year_id', '=', 'years.id')
+                    ->select('films.*')
+                    ->orderBy('years.year', 'desc');;
             }
         } elseif (isset($request->valueBy) && isset($request->filter)) {
             if ($request->valueBy == 'sbr') {
@@ -64,11 +66,15 @@ class IndexController extends Controller
                     $rejisor = $request->rejisor;
                     $actors = array_map('intval', $request->actors);
                     $filmsQuery = filmFilter::filterfilms($films, $rejisor, $actors);
-                    $films = $filmsQuery->orderByDesc('year_id');
+                    $films = $filmsQuery->join('years', 'films.year_id', '=', 'years.id')
+                        ->select('films.*')
+                        ->orderBy('years.year', 'desc');;
                 } elseif (isset($request->actors) && isset($request->rejisor) == false) {
                     $actors = array_map('intval', $request->actors);
                     $filmsQuery = filmFilter::filterByActor($films, $actors);
-                    $films = $filmsQuery->orderByDesc('year_id');
+                    $films = $filmsQuery->join('years', 'films.year_id', '=', 'years.id')
+                        ->select('films.*')
+                        ->orderBy('years.year', 'desc');;
                 } elseif (isset($request->rejisor) && isset($request->actors) == false) {
                     $rejisor = $request->rejisor;
                     $filmsQuery = filmFilter::filterByRejisor($films, $rejisor);
@@ -80,15 +86,15 @@ class IndexController extends Controller
                 $rejisor = $request->rejisor;
                 $actors = array_map('intval', $request->actors);
                 $filmsQuery = filmFilter::filterfilms($films, $rejisor, $actors);
-                $films = $filmsQuery->orderByDesc('year_id');
+                $films = $filmsQuery;
             } elseif (isset($request->actors) && isset($request->rejisor) == false) {
                 $actors = array_map('intval', $request->actors);
                 $filmsQuery = filmFilter::filterByActor($films, $actors);
-                $films = $filmsQuery->orderByDesc('year_id');
+                $films = $filmsQuery;
             } elseif (isset($request->rejisor) && isset($request->actors) == false) {
                 $rejisor = $request->rejisor;
                 $filmsQuery = filmFilter::filterByRejisor($films, $rejisor);
-                $films = $filmsQuery->orderByDesc('year_id');
+                $films = $filmsQuery;
             }
         } elseif (isset($request->year_filter)) {
             $fromYear = $request->year_from;
@@ -105,7 +111,6 @@ class IndexController extends Controller
                     ->havingRaw('average_rating BETWEEN ? AND ?', [$fromRate, $toRate]);
             });
         }
-        $films = $films->orderByDesc('year_id');
         $films = $films->paginate(9);
 
 
