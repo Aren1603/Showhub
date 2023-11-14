@@ -23,10 +23,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('personal.comment.index')}}" class="nav-link">
+                <a href="{{route('personal.rate.index')}}" class="nav-link">
                     <i class="nav-icon fa-regular fa-comment"></i>
                     <p>
-                        Comments
+                        Rates
                     </p>
                 </a>
             </li>

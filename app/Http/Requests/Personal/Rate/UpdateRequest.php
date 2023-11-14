@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Personal\Comment;
+namespace App\Http\Requests\Personal\Rate;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -43,14 +43,14 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>{{$commentsCount}}</h3>
+                                <h3>{{$ratesCount}}</h3>
 
                                 <p>Comments</p>
                             </div>
                             <div class="icon">
                                 <i class="fa-regular fa-comment"></i>
                             </div>
-                            <a href="{{route('personal.comment.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('personal.rate.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

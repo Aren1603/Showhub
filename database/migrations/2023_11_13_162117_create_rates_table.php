@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('film_id')->index()->constrained('films');
             $table->foreignId('user_id')->index()->constrained('users');
             $table->integer('rate');
-            $table->text('comment')->nullable();
+            $table->text('rate')->nullable();
             $table->timestamps();
         });
     }

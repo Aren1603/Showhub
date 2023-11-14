@@ -2,8 +2,8 @@
 //! locale : Esperanto [eo]
 //! author : Colin Dean : https://github.com/colindean
 //! author : Mia Nordentoft Imperatori : https://github.com/miestasmia
-//! comment : miestasmia corrected the translation by colindean
-//! comment : Vivakvo corrected the translation by colindean and miestasmia
+//! rate : miestasmia corrected the translation by colindean
+//! rate : Vivakvo corrected the translation by colindean and miestasmia
 
 ;(function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined'

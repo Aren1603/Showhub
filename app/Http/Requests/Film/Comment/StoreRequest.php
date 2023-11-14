@@ -22,7 +22,7 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'comment'=>'required|string'
+            'rate'=>'required|string'
         ];
     }
 }

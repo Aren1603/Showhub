@@ -90,6 +90,20 @@ class IndexController extends Controller
                 $filmsQuery = filmFilter::filterByRejisor($films, $rejisor);
                 $films = $filmsQuery->orderByDesc('year_id');
             }
+        } elseif (isset($request->year_filter)) {
+            $fromYear = $request->year_from;
+            $toYear = $request->year_to;
+            $films = $films->whereHas('year', function ($query) use ($fromYear, $toYear) {
+                $query->whereBetween('year', [$fromYear, $toYear]);
+            });
+        }elseif (isset($request->rate_filter)) {
+            $fromRate = $request->rate_from;
+            $toRate = $request->rate_to;
+            $films = $films->whereHas('rates', function ($query) use ($fromRate, $toRate) {
+                $query->select(DB::raw('AVG(rates.rate) as average_rating'))
+                    ->groupBy('film_id')
+                    ->havingRaw('average_rating BETWEEN ? AND ?', [$fromRate, $toRate]);
+            });
         }
         $films = $films->orderByDesc('year_id');
         $films = $films->paginate(9);

@@ -76,7 +76,7 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `user_id`, `film_id`, `comment`, `created_at`, `updated_at`) VALUES
-(3, 1, 4, 'New test comment', '2023-09-30 11:17:00', '2023-09-30 11:17:00'),
+(3, 1, 4, 'New test rate', '2023-09-30 11:17:00', '2023-09-30 11:17:00'),
 (5, 1, 4, 'Pizdec blyat verjapes ashxatec', '2023-09-30 11:44:09', '2023-09-30 11:44:09'),
 (6, 3, 4, 'Mi hatel es akauntic', '2023-09-30 11:45:27', '2023-09-30 11:45:27'),
 (7, 3, 4, 'yhyyyn cicik ashxatuma', '2023-09-30 11:45:42', '2023-09-30 11:45:42'),

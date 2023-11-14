@@ -59,12 +59,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'perso
         Route::get('/', 'IndexController')->name('personal.liked.index');
         Route::delete('/{film}', 'DeleteController')->name('personal.liked.delete');
     });
-//    Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
-//        Route::get('/', 'IndexController')->name('personal.comment.index');
-//        Route::get('/{comment}edit', 'EditController')->name('personal.comment.edit');
-//        Route::patch('/{comment}', 'UpdateController')->name('personal.comment.update');
-//        Route::delete('/{comment}', 'DeleteController')->name('personal.comment.delete');
-//    });
+    Route::group(['namespace' => 'Rate', 'prefix' => 'rates'], function () {
+        Route::get('/', 'IndexController')->name('personal.rate.index');
+        Route::get('/{rate}edit', 'EditController')->name('personal.rate.edit');
+        Route::patch('/{rate}', 'UpdateController')->name('personal.rate.update');
+        Route::delete('/{rate}', 'DeleteController')->name('personal.rate.delete');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware'=>'admin'], function () {
