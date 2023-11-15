@@ -8,7 +8,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
                         <h1 class="m-0 mr-3">{{$genre->genre}}</h1>
-                        <a href="{{route('admin.genre.edit', $genre->id)}}" class="text-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{route('admin.genre.edit', $genre->id)}}" class="text-success"><i
+                                class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{route('admin.genre.delete', $genre->id)}}" method="post">
                             @csrf
                             @method('delete')
@@ -39,14 +40,14 @@
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <tbody>
-                                        <tr>
-                                            <td>ID</td>
-                                            <td>{{$genre->id}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Title</td>
-                                            <td>{{$genre->genre}}</td>
-                                        </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>{{$genre->id}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Title</td>
+                                        <td>{{$genre->genre}}</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

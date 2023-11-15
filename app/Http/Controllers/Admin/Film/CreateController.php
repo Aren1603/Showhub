@@ -13,10 +13,10 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        $rejisors=Rejisor::orderBy('name')->get();
-        $actors=Actor::orderBy('actor')->get();
-        $years=Year::orderBy('year', 'desc')->get();
-        $genres=Genre::orderBy('genre')->get();
+        $rejisors = Rejisor::orderBy('name')->get();
+        $actors = Actor::orderBy('actor')->get();
+        $years = Year::orderBy('year', 'desc')->get();
+        $genres = Genre::orderBy('genre')->get();
         return view('admin.film.create', compact('rejisors', 'actors', 'years', 'genres'));
     }
 }

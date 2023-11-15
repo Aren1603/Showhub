@@ -35,7 +35,8 @@
                             <div class="icon">
                                 <i class="fa-regular fa-heart"></i>
                             </div>
-                            <a href="{{route('personal.liked.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('personal.liked.index')}}" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -50,7 +51,8 @@
                             <div class="icon">
                                 <i class="fa-regular fa-comment"></i>
                             </div>
-                            <a href="{{route('personal.rate.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('personal.rate.index')}}" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

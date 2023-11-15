@@ -10,11 +10,12 @@ class Actor extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table='actors';
-    protected $guarded=false;
+
+    protected $table = 'actors';
+    protected $guarded = false;
 
     public function films()
     {
-        return  $this->belongsToMany(Film::class, 'film_actors', 'actor_id', 'film_id');
+        return $this->belongsToMany(Film::class, 'film_actors', 'actor_id', 'film_id');
     }
 }

@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $actors=Actor::all()->sortBy('actor');
+        $actors = Actor::all()->sortBy('actor');
         return view('admin.actor.index', compact('actors'));
     }
 }

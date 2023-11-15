@@ -9,7 +9,6 @@ class ShowController extends Controller
 {
     public function __invoke(Actor $actor)
     {
-
         return view('admin.actor.show', compact('actor'));
     }
 }

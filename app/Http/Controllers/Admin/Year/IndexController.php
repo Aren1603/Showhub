@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $years=Year::orderBy('year', 'desc')->get();
+        $years = Year::orderBy('year', 'desc')->get();
         return view('admin.year.index', compact('years'));
     }
 }

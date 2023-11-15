@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $genres=Genre::all()->sortBy('genre');
+        $genres = Genre::all()->sortBy('genre');
         return view('admin.genre.index', compact('genres'));
     }
 }

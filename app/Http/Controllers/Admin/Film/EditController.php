@@ -14,10 +14,10 @@ class EditController extends BaseController
 {
     public function __invoke(Film $film)
     {
-        $rejisors=Rejisor::all();
-        $years=Year::all();
-        $actors=Actor::all();
-        $genres=Genre::all();
+        $rejisors = Rejisor::all();
+        $years = Year::all();
+        $actors = Actor::all();
+        $genres = Genre::all();
         return view('admin.film.edit', compact('film', 'rejisors', 'actors', 'years', 'genres'));
     }
 }

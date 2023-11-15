@@ -10,8 +10,9 @@ class Film extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table='films';
-    protected $guarded=false;
+
+    protected $table = 'films';
+    protected $guarded = false;
 
     protected $withCount = ['likedUsers'];
 
@@ -30,15 +31,18 @@ class Film extends Model
         return $this->hasMany(Rate::class, 'film_id', 'id');
     }
 
-    public function actors(){
+    public function actors()
+    {
         return $this->belongsToMany(Actor::class, 'film_actors', 'film_id', 'actor_id');
     }
 
-    public function genres(){
+    public function genres()
+    {
         return $this->belongsToMany(Genre::class, 'film_genres', 'film_id', 'genre_id');
     }
 
-    public function likedUsers(){
+    public function likedUsers()
+    {
         return $this->belongsToMany(User::class, 'film_user_likes', 'film_id', 'user_id');
     }
 

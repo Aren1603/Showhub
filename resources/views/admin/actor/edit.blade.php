@@ -27,15 +27,16 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{route('admin.actor.update', $actor->id)}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('admin.actor.update', $actor->id)}}" method="post"
+                              enctype="multipart/form-data">
                             @csrf
                             @method('patch')
                             <div class="form-group w-75">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="actor"  placeholder="Actor name"
-                                value="{{$actor->actor}}">
+                                <input type="text" class="form-control" name="actor" placeholder="Actor name"
+                                       value="{{$actor->actor}}">
                                 @error('actor')
-                                    <p class="text-danger">{{$message}}</p>
+                                <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="form-group w-75">
@@ -45,7 +46,8 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" value="{{$actor->image}}" name="image">
+                                        <input type="file" class="custom-file-input" value="{{$actor->image}}"
+                                               name="image">
                                         <label class="custom-file-label">Choose image</label>
                                     </div>
                                     <div class="input-group-append">

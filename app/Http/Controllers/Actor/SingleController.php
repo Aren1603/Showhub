@@ -4,7 +4,6 @@
 namespace App\Http\Controllers\Actor;
 
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Actor;
 

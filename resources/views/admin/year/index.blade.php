@@ -26,7 +26,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="mb-3"><a href="{{route('admin.year.create')}}"
-                                               class="btn btn-block btn-primary">Add year</a></div>
+                                         class="btn btn-block btn-primary">Add year</a></div>
                 </div>
                 <div class="row">
                     <div class="w-100">

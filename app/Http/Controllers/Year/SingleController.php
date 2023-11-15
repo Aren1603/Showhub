@@ -4,7 +4,6 @@
 namespace App\Http\Controllers\Year;
 
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Year;
 

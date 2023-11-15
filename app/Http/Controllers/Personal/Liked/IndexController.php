@@ -8,7 +8,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $films= auth()->user()->likedFilms;
+        $films = auth()->user()->likedFilms;
         return view('personal.liked.index', compact('films'));
     }
 }

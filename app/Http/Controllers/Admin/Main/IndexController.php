@@ -16,13 +16,13 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $data=[];
-        $data['filmsCount']=Film::all()->count();
-        $data['rejisorsCount']=Rejisor::all()->count();
-        $data['yearsCount']=Year::all()->count();
-        $data['actorsCount']=Actor::all()->count();
-        $data['genresCount']=Genre::all()->count();
-        $data['usersCount']=User::all()->count();
+        $data = [];
+        $data['filmsCount'] = Film::all()->count();
+        $data['rejisorsCount'] = Rejisor::all()->count();
+        $data['yearsCount'] = Year::all()->count();
+        $data['actorsCount'] = Actor::all()->count();
+        $data['genresCount'] = Genre::all()->count();
+        $data['usersCount'] = User::all()->count();
         return view('admin.main.index', compact('data'));
     }
 }

@@ -33,22 +33,22 @@ class FilmService
     {
         try {
             DB::beginTransaction();
-            if(isset($data['actor_ids'])) {
+            if (isset($data['actor_ids'])) {
                 $actorIds = $data['actor_ids'];
                 unset($data['actor_ids']);
             }
-            if(isset($data['genre_ids'])) {
+            if (isset($data['genre_ids'])) {
                 $genreIds = $data['genre_ids'];
                 unset($data['genre_ids']);
             }
-            if(isset($data['image'])) {
+            if (isset($data['image'])) {
                 $data['image'] = Storage::disk('public')->put('/images', $data['image']);
             }
             $film->update($data);
-            if(isset($actorIds)) {
+            if (isset($actorIds)) {
                 $film->actors()->sync($actorIds);
             }
-            if(isset($genreIds)) {
+            if (isset($genreIds)) {
                 $film->genres()->sync($genreIds);
             }
             DB::commit();

@@ -10,7 +10,7 @@ class IndexController extends BaseController
 {
     public function __invoke()
     {
-        $films=Film::all()->sortBy('name');
+        $films = Film::all()->sortBy('name');
         return view('admin.film.index', compact('films'));
     }
 }

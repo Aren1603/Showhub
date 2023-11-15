@@ -26,7 +26,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="mb-3"><a href="{{route('admin.rejisor.create')}}"
-                                               class="btn btn-block btn-primary">Add rejisor</a></div>
+                                         class="btn btn-block btn-primary">Add rejisor</a></div>
                 </div>
                 <div class="row">
                     <div class="w-100">
@@ -52,7 +52,8 @@
                                                    class="text-success"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                             <td>
-                                                <form action="{{route('admin.rejisor.delete', $rejisor->id)}}" method="post">
+                                                <form action="{{route('admin.rejisor.delete', $rejisor->id)}}"
+                                                      method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="border-0 bg-transparent"><i

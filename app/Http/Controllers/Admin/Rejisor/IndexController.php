@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $rejisors=Rejisor::all()->sortBy('name');
+        $rejisors = Rejisor::all()->sortBy('name');
         return view('admin.rejisor.index', compact('rejisors'));
     }
 }

@@ -8,7 +8,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
                         <h1 class="m-0 mr-3 font-weight-bolder">{{$film->name}}</h1>
-                        <a href="{{route('admin.film.edit', $film->id)}}" class="text-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{route('admin.film.edit', $film->id)}}" class="text-success"><i
+                                class="fa-solid fa-pen-to-square"></i></a>
                         <form action="{{route('admin.film.delete', $film->id)}}" method="post">
                             @csrf
                             @method('delete')

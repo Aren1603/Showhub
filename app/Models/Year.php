@@ -11,11 +11,11 @@ class Year extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table='years';
-    protected $guarded=false;
+    protected $table = 'years';
+    protected $guarded = false;
 
     public function films()
     {
-        return  $this->hasMany(Film::class);
+        return $this->hasMany(Film::class);
     }
 }

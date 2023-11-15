@@ -13,13 +13,15 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         if ($request->ajax()) {
-
-            $films = Film::where('name', 'like', '%' . $request->search . '%')->orwhere('description', 'like', '%' . $request->search . '%')->paginate(5);
+            $films = Film::where('name', 'like', '%' . $request->search . '%')->orwhere(
+                'description',
+                'like',
+                '%' . $request->search . '%'
+            )->paginate(5);
 
 
             $output = '';
             if (count($films) > 0) {
-
                 $output = '<div>';
 
                 foreach ($films as $film) {
@@ -39,22 +41,16 @@ class IndexController extends Controller
 
                 $output .= '
     <div class="w-100 d-flex justify-content-center">
-            '.$films->links().'
+            ' . $films->links() . '
         </div>
                 </div>';
-
-
             } else {
-
                 $output .= '<h1 class="warning">No results</h1>';
-
             }
 
             return $output;
-
         }
 
         return view('search.index');
-
     }
 }

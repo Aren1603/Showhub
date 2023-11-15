@@ -20,10 +20,12 @@
                 <div>
                     <h4>Year(from-to)</h4>
 
-                    <span class="mr-2">From</span><input  type="number" style="width: 100px; margin-bottom: 10px;" name="year_from"
+                    <span class="mr-2">From</span><input type="number" style="width: 100px; margin-bottom: 10px;"
+                                                         name="year_from"
                                                          class="year_from" id="" value="1950">
                     <br>
-                    <span class="mr-2">To</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="year_to"
+                    <span class="mr-2">To</span><input type="number" style="width: 100px; margin-bottom: 10px;"
+                                                       name="year_to"
                                                        class="year_to" id="" value="2024">
                     <br>
                     <button class="year_filter">filter</button>
@@ -31,10 +33,12 @@
                 <div>
                     <h4>Rate(from-to)</h4>
 
-                    <span class="mr-2">From</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="rate_from"
+                    <span class="mr-2">From</span><input type="number" style="width: 100px; margin-bottom: 10px;"
+                                                         name="rate_from"
                                                          class="rate_from" id="" value="0">
                     <br>
-                    <span class="mr-2">To</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="rate_to"
+                    <span class="mr-2">To</span><input type="number" style="width: 100px; margin-bottom: 10px;"
+                                                       name="rate_to"
                                                        class="rate_to" id="" value="5">
                     <br>
                     <button class="rate_filter">filter</button>

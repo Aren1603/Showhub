@@ -9,7 +9,6 @@ class ShowController extends Controller
 {
     public function __invoke(Year $year)
     {
-
         return view('admin.year.show', compact('year'));
     }
 }

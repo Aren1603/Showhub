@@ -10,7 +10,6 @@ class ShowController extends BaseController
 {
     public function __invoke(Film $film)
     {
-
         return view('admin.film.show', compact('film'));
     }
 }

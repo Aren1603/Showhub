@@ -33,55 +33,59 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="w-100
-                        <div class="card">
-                            <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <tbody>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>{{$user->id}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Name</td>
-                                        <td>{{$user->name}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>{{$user->email}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Role</td>
-                                        <td><form action="{{route('admin.user.update', $user->id)}}" method="post" class="w-100">
-                                                @csrf
-                                                @method('patch')
-                                                <div class="form-group w-50">
-                                                    <select class="form-control" name="role">
-                                                        @foreach($roles as $id => $role)
-                                                            <option value="{{$id}}"
-                                                                {{$id== $user->role ? 'selected': ''}}
-                                                            >{{$role}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('role')
-                                                    <p class="text-danger">{{$message}}</p>
-                                                    @enderror
-                                                </div>
-                                                <div class="form-group w-50">
-                                                    <input type="hidden" name="user_id" value="{{$user->id}}" id="">
-                                                </div>
-                                                <button type="submit" class="col-4 btn btn-block btn-success">Edit</button>
-                                            </form></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
+                        <div class=" card
+                    ">
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
+                            <tbody>
+                            <tr>
+                                <td>ID</td>
+                                <td>{{$user->id}}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{$user->name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{$user->email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>
+                                    <form action="{{route('admin.user.update', $user->id)}}" method="post"
+                                          class="w-100">
+                                        @csrf
+                                        @method('patch')
+                                        <div class="form-group w-50">
+                                            <select class="form-control" name="role">
+                                                @foreach($roles as $id => $role)
+                                                    <option value="{{$id}}"
+                                                        {{$id== $user->role ? 'selected': ''}}
+                                                    >{{$role}}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('role')
+                                            <p class="text-danger">{{$message}}</p>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group w-50">
+                                            <input type="hidden" name="user_id" value="{{$user->id}}" id="">
+                                        </div>
+                                        <button type="submit" class="col-4 btn btn-block btn-success">Edit</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <!-- /.card-body -->
                 </div>
             </div>
-        </section>
-        <!-- /.content -->
+    </div>
+    </div>
+    </section>
+    <!-- /.content -->
     </div>
 @endsection

@@ -4,7 +4,6 @@
 namespace App\Http\Controllers\Rejisor;
 
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Rejisor;
 

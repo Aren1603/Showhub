@@ -8,9 +8,9 @@ use App\Models\Year;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request,Year $year)
+    public function __invoke(UpdateRequest $request, Year $year)
     {
-        $data=$request->validated();
+        $data = $request->validated();
         $year->update($data);
         return view('admin.year.show', compact('year'));
     }

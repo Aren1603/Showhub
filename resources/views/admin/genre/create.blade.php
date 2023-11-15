@@ -31,9 +31,9 @@
                             @csrf
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="genre"  placeholder="Genre name">
+                                <input type="text" class="form-control" name="genre" placeholder="Genre name">
                                 @error('genre')
-                                    <p class="text-danger">{{$message}}</p>
+                                <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
                             <button type="submit" class="col-4 btn btn-block btn-success">Add</button>

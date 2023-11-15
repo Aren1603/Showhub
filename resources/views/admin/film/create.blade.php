@@ -86,9 +86,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Select Actors</label>
-                                <select class="select2" name="actor_ids[]" multiple="multiple" data-placeholder="Select actors" style="width: 100%;">
+                                <select class="select2" name="actor_ids[]" multiple="multiple"
+                                        data-placeholder="Select actors" style="width: 100%;">
                                     @foreach($actors as $actor)
-                                        <option {{is_array(old('actor_ids')) && in_array($actor->id, old('actor_ids')) ? 'selected' : ''}} value="{{$actor->id}}">{{$actor->actor}}</option>
+                                        <option
+                                            {{is_array(old('actor_ids')) && in_array($actor->id, old('actor_ids')) ? 'selected' : ''}} value="{{$actor->id}}">{{$actor->actor}}</option>
                                     @endforeach
                                 </select>
                                 @error('actor_ids')
@@ -97,9 +99,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Select genres</label>
-                                <select class="select2" name="genre_ids[]" multiple="multiple" data-placeholder="Select genres" style="width: 100%;">
+                                <select class="select2" name="genre_ids[]" multiple="multiple"
+                                        data-placeholder="Select genres" style="width: 100%;">
                                     @foreach($genres as $genre)
-                                        <option {{is_array(old('genre_ids')) && in_array($genre->id, old('genre_ids')) ? 'selected' : ''}} value="{{$genre->id}}">{{$genre->genre}}</option>
+                                        <option
+                                            {{is_array(old('genre_ids')) && in_array($genre->id, old('genre_ids')) ? 'selected' : ''}} value="{{$genre->id}}">{{$genre->genre}}</option>
                                     @endforeach
                                 </select>
                                 @error('genre_ids')

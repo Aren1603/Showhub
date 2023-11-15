@@ -11,7 +11,7 @@ class Rate extends Model
     use HasFactory;
 
     protected $table = 'rates';
-    protected $guarded=false;
+    protected $guarded = false;
 
     public function user()
     {

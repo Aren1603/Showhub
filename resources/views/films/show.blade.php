@@ -9,18 +9,21 @@
                     <img src="{{asset('storage/app/public/'.$film->image)}}" alt="">
                 </div>
                 <div class="filmdestext">
-                    <h2>Year: <a href="{{route('year.single', $film->year->id)}}"><span>{{$film->year->year}}</span></a></h2>
-                    <h2>Rejisor: <a href="{{route('rejisor.single', $film->rejisor->id)}}"><span>{{$film->rejisor->name}}</span></a></h2>
+                    <h2>Year: <a href="{{route('year.single', $film->year->id)}}"><span>{{$film->year->year}}</span></a>
+                    </h2>
+                    <h2>Rejisor: <a
+                            href="{{route('rejisor.single', $film->rejisor->id)}}"><span>{{$film->rejisor->name}}</span></a>
+                    </h2>
                     <h2>Actors:
-                            @foreach($film->actors as $actor)
+                        @foreach($film->actors as $actor)
                             <a href="{{route('actor.single', $actor->id)}}"><span>{{$actor->actor.', '}}</span></a>
-                            @endforeach
-                        </h2>
+                        @endforeach
+                    </h2>
                     <h2>Genre:
-                            @foreach($film->genres as $genre)
-                                <a href="{{route('genre.single', $genre->id)}}"><span>{{$genre->genre.', '}}</span></a>
-                            @endforeach
-                        </h2>
+                        @foreach($film->genres as $genre)
+                            <a href="{{route('genre.single', $genre->id)}}"><span>{{$genre->genre.', '}}</span></a>
+                        @endforeach
+                    </h2>
                     <h2>Description: <span>{!! $film->description !!}</span></h2>
                     <div class="average-rating">
                         <h3>Rating</h3>
@@ -50,39 +53,41 @@
                 @auth()
                     <div class="comment_inp">
 
-                            <div class="rating-form-wrapper">
-                                <h3>Add your Reviews</h3>
-                                <form action="{{route('film.rate.store', $film->id)}}"
-                                      method="post">
-                                    @csrf
-                                    <div class="rating-form row">
-                                        <div class="comment-form-rating">
-                                            <span>Your rating</span>
-                                            <p class="stars">
-                                                <label for="rated-1"></label>
-                                                <input type="radio" id="rated-1" name="rate"
-                                                       value="1">
-                                                <label for="rated-2"></label>
-                                                <input type="radio" id="rated-2" name="rate"
-                                                       value="2">
-                                                <label for="rated-3"></label>
-                                                <input type="radio" id="rated-3" name="rate"
-                                                       value="3">
-                                                <label for="rated-4"></label>
-                                                <input type="radio" id="rated-4" name="rate"
-                                                       value="4">
-                                                <label for="rated-5"></label>
-                                                <input type="radio" id="rated-5" name="rate"
-                                                       value="5" checked="checked">
-                                            </p>
-                                        </div>
-                                        <textarea class="form-control" name="comment" cols="20" rows="5"
-                                                  placeholder="Send comment"></textarea>
-                                        <button type="submit" style="width: 100px;" class="mt-2 btn btn-block btn-success">Public</button>
+                        <div class="rating-form-wrapper">
+                            <h3>Add your Reviews</h3>
+                            <form action="{{route('film.rate.store', $film->id)}}"
+                                  method="post">
+                                @csrf
+                                <div class="rating-form row">
+                                    <div class="comment-form-rating">
+                                        <span>Your rating</span>
+                                        <p class="stars">
+                                            <label for="rated-1"></label>
+                                            <input type="radio" id="rated-1" name="rate"
+                                                   value="1">
+                                            <label for="rated-2"></label>
+                                            <input type="radio" id="rated-2" name="rate"
+                                                   value="2">
+                                            <label for="rated-3"></label>
+                                            <input type="radio" id="rated-3" name="rate"
+                                                   value="3">
+                                            <label for="rated-4"></label>
+                                            <input type="radio" id="rated-4" name="rate"
+                                                   value="4">
+                                            <label for="rated-5"></label>
+                                            <input type="radio" id="rated-5" name="rate"
+                                                   value="5" checked="checked">
+                                        </p>
                                     </div>
-                                </form>
-                            </div>
-                            @csrf
+                                    <textarea class="form-control" name="comment" cols="20" rows="5"
+                                              placeholder="Send comment"></textarea>
+                                    <button type="submit" style="width: 100px;" class="mt-2 btn btn-block btn-success">
+                                        Public
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        @csrf
 
                     </div>
                 @endauth

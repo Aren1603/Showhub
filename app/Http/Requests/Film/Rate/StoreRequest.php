@@ -22,10 +22,11 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'rate'=>'required|integer',
-            'comment'=>'nullable|string'
+            'rate' => 'required|integer',
+            'comment' => 'nullable|string'
         ];
     }
+
     public function messages()
     {
         return [

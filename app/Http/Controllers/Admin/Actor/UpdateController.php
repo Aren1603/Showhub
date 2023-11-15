@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Storage;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request,Actor $actor)
+    public function __invoke(UpdateRequest $request, Actor $actor)
     {
-        $data=$request->validated();
-        if(isset($data['image'])) {
+        $data = $request->validated();
+        if (isset($data['image'])) {
             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         }
         $actor->update($data);

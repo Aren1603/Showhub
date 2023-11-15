@@ -45,7 +45,8 @@
                                                         class="fa-regular fa-eye"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <form action="{{route('personal.liked.delete', $film->id)}}" method="post">
+                                                <form action="{{route('personal.liked.delete', $film->id)}}"
+                                                      method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="border-0 bg-transparent"><i

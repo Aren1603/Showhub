@@ -11,11 +11,11 @@ class Rejisor extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table='rejisors';
-    protected $guarded=false;
+    protected $table = 'rejisors';
+    protected $guarded = false;
 
     public function films()
     {
-        return  $this->hasMany(Film::class);
+        return $this->hasMany(Film::class);
     }
 }

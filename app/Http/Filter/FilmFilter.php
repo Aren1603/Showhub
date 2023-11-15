@@ -12,13 +12,15 @@ class FilmFilter
     {
         if (!empty($rejisor)) {
             $query->where('rejisor_id', $rejisor);
-
         }
 
         if (!empty($actors)) {
-            $query->whereHas('actors', function ($query) use ($actors) {
-                $query->whereIn('actor_id', $actors);
-            });
+            $query->whereHas(
+                'actors',
+                function ($query) use ($actors) {
+                    $query->whereIn('actor_id', $actors);
+                }
+            );
         }
 
         return $query;
@@ -26,7 +28,6 @@ class FilmFilter
 
     public static function filterByRejisor($query, $rejisor)
     {
-
         if (!empty($rejisor)) {
             $query->where('rejisor_id', $rejisor);
         }
@@ -36,11 +37,13 @@ class FilmFilter
 
     public static function filterByActor($query, $actors)
     {
-
         if (!empty($actors)) {
-            $query->whereHas('actors', function ($query) use ($actors) {
-                $query->whereIn('actor_id', $actors);
-            });
+            $query->whereHas(
+                'actors',
+                function ($query) use ($actors) {
+                    $query->whereIn('actor_id', $actors);
+                }
+            );
         }
 
         return $query;

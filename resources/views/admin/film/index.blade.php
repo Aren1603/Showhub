@@ -25,8 +25,8 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="mb-3" ><a href="{{route('admin.film.create')}}"
-                                               class="btn btn-block btn-primary">Add film</a></div>
+                    <div class="mb-3"><a href="{{route('admin.film.create')}}"
+                                         class="btn btn-block btn-primary">Add film</a></div>
                 </div>
                 <div class="row">
                     <div class="w-100">

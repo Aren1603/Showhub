@@ -50,7 +50,8 @@
                                                    class="text-success"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <form action="{{route('personal.rate.delete', $rate->id)}}" method="post">
+                                                <form action="{{route('personal.rate.delete', $rate->id)}}"
+                                                      method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="border-0 bg-transparent"><i

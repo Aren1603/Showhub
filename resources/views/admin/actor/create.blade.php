@@ -31,9 +31,10 @@
                             @csrf
                             <div class="form-group w-75">
                                 <label>Name</label>
-                                <input type="text" class="form-control" name="actor"  placeholder="Actor name" value="{{old('actor')}}">
+                                <input type="text" class="form-control" name="actor" placeholder="Actor name"
+                                       value="{{old('actor')}}">
                                 @error('actor')
-                                    <p class="text-danger">{{$message}}</p>
+                                <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="form-group w-75">
