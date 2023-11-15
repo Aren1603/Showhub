@@ -78,7 +78,7 @@
                                         </div>
                                         <textarea class="form-control" name="comment" cols="20" rows="5"
                                                   placeholder="Send comment"></textarea>
-                                        <button type="submit" class="col-2 mt-2 btn btn-block btn-success">Public</button>
+                                        <button type="submit" style="width: 100px;" class="mt-2 btn btn-block btn-success">Public</button>
                                     </div>
                                 </form>
                             </div>
@@ -86,7 +86,7 @@
 
                     </div>
                 @endauth
-                <div class="comment_list w-50 mt-5">
+                <div class="comment_list mt-5">
                     @foreach($film->rates as $rate)
                         <div class="rating-item d-flex justify-content-lg-start">
                             <div class="rating-author-pic mr-5">

@@ -2,23 +2,44 @@
 
 @section('content')
     <div class="catglav">
-        <div class="d-flex justify-content-sm-between">
+        <div class="cat_header">
             <div><h1>All films</h1></div>
             <div><h4><a href="{{route('search.index')}}"><i class="fa-solid fa-magnifying-glass"></i></a></h4></div>
         </div>
         <div class="cat">
             <div class="filter">
-                <div class="col-sm-6 mb-5">
-                    <div class="sort-by-wrapper">
-                        <h4>Sort by</h4>
-                        <select name="sort" id="sort" class="option">
-                            <option value="" disabled selected>choose</option>
-                            <option value="sbn">Sort By Newest</option>
-                            <option value="sbr">Sort By Rating</option>
-                        </select>
-                    </div>
+
+                <div class="sort-by-wrapper">
+                    <h4>Sort by</h4>
+                    <select name="sort" id="sort" class="option">
+                        <option value="" disabled selected>choose</option>
+                        <option value="sbn">Sort By Newest</option>
+                        <option value="sbr">Sort By Rating</option>
+                    </select>
                 </div>
-                <ul class="sidebar-list">
+                <div>
+                    <h4>Year(from-to)</h4>
+
+                    <span class="mr-2">From</span><input  type="number" style="width: 100px; margin-bottom: 10px;" name="year_from"
+                                                         class="year_from" id="" value="1950">
+                    <br>
+                    <span class="mr-2">To</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="year_to"
+                                                       class="year_to" id="" value="2024">
+                    <br>
+                    <button class="year_filter">filter</button>
+                </div>
+                <div>
+                    <h4>Rate(from-to)</h4>
+
+                    <span class="mr-2">From</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="rate_from"
+                                                         class="rate_from" id="" value="0">
+                    <br>
+                    <span class="mr-2">To</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="rate_to"
+                                                       class="rate_to" id="" value="5">
+                    <br>
+                    <button class="rate_filter">filter</button>
+                </div>
+                <div class="sidebar-list">
                     <h4>Filter by actors</h4>
                     @foreach($actors as $actor)
                         @if(is_object($actor))
@@ -33,8 +54,8 @@
                             </li>
                         @endif
                     @endforeach
-                </ul>
-                <ul class="sidebar-list">
+                </div>
+                <div class="sidebar-list">
                     <h4>Filter by rejisors</h4>
                     @foreach($rejisors as $rejisor)
                         @if(is_object($rejisor))
@@ -49,25 +70,7 @@
                             </li>
                         @endif
                     @endforeach
-                </ul>
-                <ul>
-                    <h4>Year(from-to)</h4>
-
-                    <span>From</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="year_from" class="year_from" id="" value="1950">
-                    <br>
-                    <span>To</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="year_to" class="year_to" id="" value="2024">
-                    <br>
-                    <button class="year_filter">filter</button>
-                </ul>
-                <ul>
-                    <h4>Rate(from-to)</h4>
-
-                    <span>From</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="rate_from" class="rate_from" id="" value="0">
-                    <br>
-                    <span>To</span><input type="number" style="width: 100px; margin-bottom: 10px;" name="rate_to" class="rate_to" id="" value="5">
-                    <br>
-                    <button class="rate_filter">filter</button>
-                </ul>
+                </div>
             </div>
             <div class="cat1">
                 @foreach($films as $film)
@@ -82,10 +85,11 @@
                                     @if($film->rates)
                                         @for($i=0; $i<5; $i++)
                                             @if($film->rates->avg('rate') > $i)
-                                                <span><i class="fa-solid fa-star"></i></span>
+                                                <span style="color: #eeb644; font-size: 25px;"><i
+                                                        class="fa-solid fa-star"></i></span>
                                             @else
-                                                <span><i style="color: #ccc!important;"
-                                                         class="fa-solid fa-star"></i></span>
+                                                <span style=" font-size: 25px;"><i style="color: #ccc!important;"
+                                                                                   class="fa-solid fa-star"></i></span>
                                             @endif
                                         @endfor
                                     @endif
@@ -178,10 +182,10 @@
                 },
             });
         })
-        $('.year_filter').click(function (){
-            var from=$('.year_from').val()
-            var to=$('.year_to').val()
-            var year_filter=1;
+        $('.year_filter').click(function () {
+            var from = $('.year_from').val()
+            var to = $('.year_to').val()
+            var year_filter = 1;
             $.ajax({
                 url: "{{route('films.index')}}",
                 type: "GET",
@@ -200,10 +204,10 @@
                 },
             });
         })
-        $('.rate_filter').click(function (){
-            var from=$('.rate_from').val()
-            var to=$('.rate_to').val()
-            var rate_filter=1;
+        $('.rate_filter').click(function () {
+            var from = $('.rate_from').val()
+            var to = $('.rate_to').val()
+            var rate_filter = 1;
             $.ajax({
                 url: "{{route('films.index')}}",
                 type: "GET",

@@ -30,7 +30,7 @@
                         <form action="{{route('admin.film.update', $film->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('patch')
-                            <div class="form-group w-25">
+                            <div class="form-group w-75">
                                 <label>Title</label>
                                 <input type="text" class="form-control" name="name" placeholder="film name"
                                        value="{{$film->name}}">
@@ -44,7 +44,7 @@
                                 <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div class="form-group w-75">
                                 <label for="exampleInputFile">Add image</label>
                                     <div class="w-50 mb-3">
                                         <img src="{{asset('storage/app/public/'.$film->image)}}" alt="image" class="w-50">
@@ -62,7 +62,7 @@
                                 <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div class="form-group w-75">
                                 <label>Select rejisor</label>
                                 <select class="form-control" name="rejisor_id">
                                     @foreach($rejisors as $rejisor)
@@ -72,7 +72,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group w-50">
+                            <div class="form-group w-75">
                                 <label>Select year</label>
                                 <select class="form-control" name="year_id">
                                     @foreach($years as $year)
@@ -98,7 +98,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group w-25">
+                            <div class="form-group">
                                 <button type="submit" class="col-3 btn btn-block btn-success">Update</button>
                             </div>
                         </form>

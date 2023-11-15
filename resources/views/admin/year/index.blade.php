@@ -25,11 +25,11 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-2 mb-3"><a href="{{route('admin.year.create')}}"
+                    <div class="mb-3"><a href="{{route('admin.year.create')}}"
                                                class="btn btn-block btn-primary">Add year</a></div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="w-100">
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">

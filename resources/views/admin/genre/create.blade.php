@@ -27,7 +27,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{route('admin.genre.store')}}" method="post" class="w-25">
+                        <form action="{{route('admin.genre.store')}}" method="post" class="w-50">
                             @csrf
                             <div class="form-group">
                                 <label>Name</label>
@@ -36,7 +36,7 @@
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <button type="submit" class="col-3 btn btn-block btn-success">Add</button>
+                            <button type="submit" class="col-4 btn btn-block btn-success">Add</button>
 
                         </form>
                     </div>

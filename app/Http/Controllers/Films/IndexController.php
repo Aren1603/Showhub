@@ -28,7 +28,7 @@ class IndexController extends Controller
                     ->leftJoin('rates', 'films.id', '=', 'rates.film_id')
                     ->groupBy('films.id')
                     ->orderBy('average_rate', 'desc');
-            } elseif($request->valueBy == 'sbn') {
+            } elseif ($request->valueBy == 'sbn') {
                 $films = $films->join('years', 'films.year_id', '=', 'years.id')
                     ->select('films.*')
                     ->orderBy('years.year', 'desc');;
@@ -99,17 +99,23 @@ class IndexController extends Controller
         } elseif (isset($request->year_filter)) {
             $fromYear = $request->year_from;
             $toYear = $request->year_to;
-            $films = $films->whereHas('year', function ($query) use ($fromYear, $toYear) {
-                $query->whereBetween('year', [$fromYear, $toYear]);
-            });
-        }elseif (isset($request->rate_filter)) {
+            $films = $films->whereHas(
+                'year',
+                function ($query) use ($fromYear, $toYear) {
+                    $query->whereBetween('year', [$fromYear, $toYear]);
+                }
+            );
+        } elseif (isset($request->rate_filter)) {
             $fromRate = $request->rate_from;
             $toRate = $request->rate_to;
-            $films = $films->whereHas('rates', function ($query) use ($fromRate, $toRate) {
-                $query->select(DB::raw('AVG(rates.rate) as average_rating'))
-                    ->groupBy('film_id')
-                    ->havingRaw('average_rating BETWEEN ? AND ?', [$fromRate, $toRate]);
-            });
+            $films = $films->whereHas(
+                'rates',
+                function ($query) use ($fromRate, $toRate) {
+                    $query->select(DB::raw('AVG(rates.rate) as average_rating'))
+                        ->groupBy('film_id')
+                        ->havingRaw('average_rating BETWEEN ? AND ?', [$fromRate, $toRate]);
+                }
+            );
         }
         $films = $films->paginate(9);
 

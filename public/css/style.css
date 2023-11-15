@@ -1674,6 +1674,53 @@ footer{
     width: 300px;
 }
 
+.filter li{
+    list-style: none;
+}
+
+.rating span{
+    color: #eeb644;
+}
+
+.cat_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.year_filter{
+    border: none;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.filter div{
+    margin-bottom: 30px;
+}
+
+.rate_filter{
+    border: none;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.year_from, .year_to, .rate_from, .rate_to{
+    border-color: lightgrey!important;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.sort-by-wrapper select{
+    border-color: lightgrey!important;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+
+.comment_list{
+    width: 50%;
+}
+
 
 @media (max-width: 1200px) {
     .glav p {
@@ -1799,6 +1846,23 @@ footer{
     }
 }
 
+@media (max-width: 750px) {
+    .cat{
+        display: block;
+    }
+    .filter{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        border-right: none;
+        border-bottom: 1px solid lightgrey;
+    }
+    .filter div{
+        margin-right: 20px;
+    }
+}
+
 @media (max-width: 630px) {
     .footer-cont div{
         width: 100%;
@@ -1858,6 +1922,14 @@ footer{
         padding-left: 10px;
     }
 
+    .comment_list{
+        width: 100%;
+    }
+
+    .rating-item{
+        width: 100%!important;
+    }
+
     .top2_1 {
         width: 80%;
     }
@@ -1882,6 +1954,7 @@ footer{
 
     .menu {
         padding: 3px;
+        padding-right: 25px;
     }
 
     .glav1 {
@@ -1891,6 +1964,9 @@ footer{
     .principal {
         padding-left: 10px;
         padding-right: 10px;
+    }
+    .sort-by-wrapper{
+        margin-right: 80%!important;
     }
 
     .principal1 {

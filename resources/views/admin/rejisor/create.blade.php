@@ -29,14 +29,14 @@
                     <div class="col-12">
                         <form action="{{route('admin.rejisor.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group w-25">
+                            <div class="form-group w-75">
                                 <label>Name</label>
                                 <input type="text" class="form-control" name="name"  placeholder="Rejisor name" value="{{old('name')}}">
                                 @error('name')
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div class="form-group w-75">
                                 <label for="exampleInputFile">Add image</label>
                                 <div class="input-group">
                                     <div class="custom-file">

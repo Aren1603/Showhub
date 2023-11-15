@@ -32,7 +32,7 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="w-100
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">

@@ -30,7 +30,7 @@
                         <form action="{{route('admin.rejisor.update', $rejisor->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('patch')
-                            <div class="form-group w-25">
+                            <div class="form-group w-75">
                                 <label>Name</label>
                                 <input type="text" class="form-control" name="name"  placeholder="Rejisor name"
                                 value="{{$rejisor->name}}">
@@ -38,7 +38,7 @@
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div class="form-group w-75">
                                 <label for="exampleInputFile">Add image</label>
                                 <div class="w-50 mb-3">
                                     <img src="{{asset('storage/app/public/'.$rejisor->image)}}" alt="image" class="w-50">

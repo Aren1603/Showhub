@@ -11,9 +11,9 @@ class StoreController extends Controller
 {
     public function __invoke(Film $film, StoreRequest $request)
     {
-        $data=$request->validated();
-        $data['user_id']=auth()->user()->id;
-        $data['film_id']=$film->id;
+        $data = $request->validated();
+        $data['user_id'] = auth()->user()->id;
+        $data['film_id'] = $film->id;
         Comment::create($data);
         return redirect()->route('films.show', $film->id);
     }

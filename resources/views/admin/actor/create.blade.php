@@ -29,14 +29,14 @@
                     <div class="col-12">
                         <form action="{{route('admin.actor.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group w-25">
+                            <div class="form-group w-75">
                                 <label>Name</label>
                                 <input type="text" class="form-control" name="actor"  placeholder="Actor name" value="{{old('actor')}}">
                                 @error('actor')
                                     <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <div class="form-group w-50">
+                            <div class="form-group w-75">
                                 <label for="exampleInputFile">Add image</label>
                                 <div class="input-group">
                                     <div class="custom-file">

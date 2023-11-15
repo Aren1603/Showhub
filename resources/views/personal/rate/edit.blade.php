@@ -25,7 +25,7 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{route('personal.rate.update', $rate->id)}}" method="post" class="w-50">
+                        <form action="{{route('personal.rate.update', $rate->id)}}" method="post" class="w-75">
                             @csrf
                             @method('patch')
                             <div class="form-group">
@@ -35,7 +35,7 @@
                                 <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
-                            <button type="submit" class="col-3 btn btn-block btn-success">Edit</button>
+                            <button type="submit" class="btn btn-block btn-success">Edit</button>
 
                         </form>
                     </div>
